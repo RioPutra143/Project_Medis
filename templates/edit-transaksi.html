@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Siswa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="card">
+        <center>
+            <h2>Edit Data Transaksi</h2>
+        </center>
+        <form action="{{ url_for('edit_transaksi', id = g.id_transaksi) }}" method="post" onsubmit="return confirm('Data berhasil dirubah')">
+            <label>ID Transaksi</label><br>
+            <input class="input" type="text" name="id_transaksi" value="{{ g.id_transaksi  }}" readonly><br><br>
+
+            <label>Nama Pengguna</label><br>
+            <select class="input" name="id_pasien_rio" required>
+                    {% for x in pasien %}
+                        <option value="{{x.id_pasien_rio}}">{{ x.nama_rio }}</option>
+                    {% endfor %}
+                </select><br><br>
+
+            <label>Total Biaya</label><br>
+            <input class="input" type="text" name="total_biaya_rio" value="{{ g.total_biaya_rio  }}" required><br><br>
+
+            <label>Status</label><br>
+            <select class="input" name="status_pembayaran_rio">
+                    <option value="Lunas">Lunas</option>
+                    <option value="Belum Lunas">Belum Lunas</option>
+                </select><br><br>
+            
+            <label>Pembayaran</label><br>
+            <input class="input" type="date" name="tgl_transaksi_rio" value="{{ g.tgl_transaksi_rio }}" required><br><br>
+
+            <button type="submit" class="btn">Simpan Perubahan</button>
+            <a href="{{ url_for('dashboard') }}"><button type="button" class="btn">Batal</button></a>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+

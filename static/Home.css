@@ -1,0 +1,123 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #2D2D2D;
+  height: 100vh;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+  background: linear-gradient(135deg, #1E2A38, #3E5C76, #4C8BF5);
+  background-size: 500% 500%;
+  animation: fadeIn 0.8s ease-in forwards, gradientMove 10s ease infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 40px 0;
+  width: 260px;
+  background: rgba(30,42,56,0.9);
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(6px);
+}
+
+
+nav li a {
+  display: block;
+  color: #E7F2EF;
+  padding: 14px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 12px;
+  background: rgba(46, 65, 90, 0.85);
+  transition: all 0.3s ease;
+}
+
+nav li a.active {
+  font-size: 20px;
+  font-weight: bold;
+  background-color:rgba(46, 65, 90, 0.85);
+  color: #fff;
+}
+
+nav li a.active:hover{
+  background-color: #5A9BF6;
+  transform: translateX(10px);
+}
+nav li a:hover:not(.active) {
+  background-color: #5A9BF6;
+  transform: translateX(10px);
+}
+
+main {
+  margin-left: 280px;
+  padding: 40px;
+}
+
+.Judul {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.Judul2{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: black;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.home {
+  background-color: rgba(255,255,255,0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  margin-bottom: 40px;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease;
+}
+
+.home:hover {
+  transform: translateY(-5px);
+}
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; 
+}
+.Kotak {
+  width: 220px;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  border: 2px solid #1E2A38;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1E2A38;
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Kotak:hover {
+  background-color: #1E2A38;
+  color: #ffffff;
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(30,42,56,0.5);
+}

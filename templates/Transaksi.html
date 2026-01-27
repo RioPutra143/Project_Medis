@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+    <title>Input</title>
+</head>
+<body>
+    <div class="card">
+    <h1>Transaksi</h1>
+    <form method="POST">
+        <table class="form-table">
+             <tr>
+                <td><input type="text" name="transaksi_Rio" class="input2" placeholder="Masukan Kode Transaksi" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="id_Rio" class="input2" placeholder="Masukan ID User" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="id_jadwal_rio" class="input2" placeholder="Masukan ID Jadwal" required></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="jml_Rio" class="input2" placeholder="Masukan Jumlah Orang" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="Pembayaran_Rio" class="input2" placeholder="Masukan Pembayaran" required></td>
+            </tr>
+            
+        </table>
+        <td><button type="submit" class="btn">Kirim</button></td>
+    </form>
+    </div>
+</body>
+</html>
