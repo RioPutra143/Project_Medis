@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dashboard</title>
+
+</head>
+<body>
+    
+    <div class="card">
+    <h2>Dashboard</h2>
+    <table class="table">
+        <tr>
+            <th>ID Pasien</th>
+            <th>Nama Pasien</th>
+            <th>Alamat</th>
+            <th>Kontak</th>
+        </tr>
+         </tr>
+            <tr>
+                {% if transaksi %}
+            {% for g in transaksi %}
+            <tr>
+                <td>{{g.id_pasien_rio  }}</td>
+                 <td>{{g.nama_rio  }}</td>
+                 <td>{{g.alamat_rio  }}</td>
+                <td>{{g.kontak  }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="4" style="text-align:center;">Data tidak ditemukan</td></tr>
+        {% endif %}
+            </tr>
+            
+</table><br>
+<form action="/cetak" >
+    <button class="btn">Cetak</button>
+</form><br>
+<a href="/dashboard" class="btn-outline" method="get">dashboard</a>
+<a href="/logout" class="btn-outline">Logout</a>
+ </div>
+</body>
+</html>

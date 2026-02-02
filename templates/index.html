@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+    <title>Input</title>
+</head>
+<body>
+    <div class="card1">
+    <h1>Pengisian Data</h1>
+    <form method="post">
+        <table class="form-table">
+            <tr>
+                <td><label>Pilih Nama Pasien</label></td>
+                <td><label>Pilih Ruangan</label></td>
+            </tr>
+            <tr>
+                <td><select class="input" name="id_pasien_rio" required>
+                    {% for x in data %}
+                        <option value="{{x.id_pasien_rio}}">{{ x.nama_rio }} ( {{ x.id_pasien_rio }} )</option>
+                    {% endfor %}
+                </select></td>
+                <td><select class="input" name="id_rawat_rio" required>
+                    {% for f in rawat %}
+                        <option value="{{f.id_rawat_rio}}">{{ f.id_rawat_rio }} {{ f.kelas_rio }}</option>
+                    {% endfor %}
+                </select></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="total_biaya_rio" class="input" placeholder="Masukan harga" required></td>
+            </tr>
+            <tr>
+                <td><select class="input" name="status_pembayaran_rio">
+                    <option value="Lunas">Lunas</option>
+                    <option value="Belum Lunas">Belum Lunas</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><input type="date" name="tgl_transaksi_rio" class="input" placeholder="Deskripsi" required></td>
+            </tr>
+            
+        </table>
+        <td><button type="submit" class="btn">Kirim</button></td>
+    </form>
+    </div>
+</body>
+</html>
