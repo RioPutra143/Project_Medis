@@ -20,7 +20,11 @@ def get_db_connection():
 
 def Id_Otomatis(prefix, nama_tabel, kolom_id):
     try:
+<<<<<<< HEAD
         conn = get_db_connection()
+=======
+        conn = db_connection()
+>>>>>>> 1f2f23680b784aa3695df76bf8fe49bcd1c71fcf
         cursor = conn.cursor(dictionary=True)
         cursor.execute(f"SELECT MAX(CAST(SUBSTRING({kolom_id}, LENGTH('{prefix}_') + 1) AS UNSIGNED)) as data_terakhir FROM {nama_tabel} WHERE {kolom_id} LIKE '{prefix}_%'")
         data_terakhir = cursor.fetchone()
@@ -181,6 +185,7 @@ def edit_transaksi(id):
             return "transaksi tidak ditemukan"
         return render_template('edit-transaksi.html', g=s,pasien=pasien)
 
+<<<<<<< HEAD
 @app.route('/cetakT')
 def cetakT():
     conn = get_db_connection()
@@ -231,6 +236,8 @@ def cetakT():
         mimetype="application/pdf"
     )
 
+=======
+>>>>>>> 1f2f23680b784aa3695df76bf8fe49bcd1c71fcf
 @app.route('/cetak')
 def cetak():
     conn = get_db_connection()
